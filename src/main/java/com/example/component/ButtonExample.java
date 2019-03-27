@@ -3,6 +3,7 @@ package com.example.component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
@@ -10,8 +11,11 @@ import com.vaadin.flow.server.PWA;
 @PWA(name="Project based for Vaadin flow", shortName = "Project Base")
 public class ButtonExample extends VerticalLayout {
 	public ButtonExample() {
+		PasswordField passwordField = new PasswordField();
+		passwordField.setRevealButtonVisible(true);
+
 		Button button = new Button("Click me",
 				buttonClickEvent -> Notification.show("Clicked",1000, Notification.Position.MIDDLE));
-		add(button);
+		add(button, passwordField);
  	}
 }
